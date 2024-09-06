@@ -46,16 +46,12 @@
 <script>
     export default {
         name: 'ProductIndex',
+        props: ['products'],
         data() {
             return {
                 productFindTerm: '',
                 products: []
             }
-        },
-        mounted () {
-            axios
-            .get('/api/products')
-            .then(response => (this.products = response.data.data));
         },
         computed: {
             productsFiltered() {

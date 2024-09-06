@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
-use App\Models\ProductCategory;
 
 class ProductController extends Controller
 {
@@ -13,7 +12,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return Product::withTrashed()->with(['productCategory'])->get();
+        return Inertia::render('Product/Index', [
+            'products' => Product::withTrashed()->with(['productCategory'])->get(),
+        ]);
     }
 
     /**

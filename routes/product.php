@@ -8,9 +8,7 @@ use App\Http\Controllers\ProductController;
  */
 Route::prefix('api')->group(function () {
     Route::controller(ProductController::class)->group(function () {
-        Route::post('/products', 'store')->name('product.store');
-        Route::get('/products', 'index')->name('product.index');        
-        Route::get('/products/{product}', 'show')->name('product.show');
+        Route::post('/products', 'store')->name('product.store');       
         Route::put('/products/{product}', 'update')->name('product.update');
         Route::delete('/products/{product}', 'delete')->name('product.delete');
         Route::patch('/products/restore/{product}', 'restore')->name('product.restore');
@@ -23,4 +21,8 @@ Route::prefix('api')->group(function () {
  */
 Route::get('/products', function () {
     return view('products');
-});
+})->name('product.index');
+
+Route::get('/products/{product}', function () {
+    return view('show');
+})->name('product.show');
