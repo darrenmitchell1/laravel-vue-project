@@ -1,7 +1,13 @@
 <script setup>
 import GuestLayout from '@/Layouts/GuestLayout.vue';
-import ProductIndex from '@/Components/Product/Index';
+import ProductIndex from '@/Components/Product/Index.vue';
 import { Head } from '@inertiajs/vue3';
+
+defineProps({
+    products: {
+        type: Array,
+    },
+});
 
 </script>
 
@@ -9,6 +15,6 @@ import { Head } from '@inertiajs/vue3';
     <GuestLayout>
         <Head title="Products" />
 
-        <ProductIndex></ProductIndex>
+        <ProductIndex :products="products"></ProductIndex>
     </GuestLayout>
 </template>

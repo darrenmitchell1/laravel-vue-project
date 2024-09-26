@@ -62,7 +62,7 @@ function handleImageError() {
                     <div class="grid gap-6 lg:grid-cols-2 lg:gap-8">
                         <nav class="-mx-3 flex flex-1 justify-end">
                             <Link
-                                :href="route('product.index')"  
+                                :href="route('product.index')"
                                 class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
                             >
                                 Products Project

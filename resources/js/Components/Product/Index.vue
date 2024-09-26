@@ -49,8 +49,7 @@
         props: ['products'],
         data() {
             return {
-                productFindTerm: '',
-                products: []
+                productFindTerm: ''
             }
         },
         computed: {
